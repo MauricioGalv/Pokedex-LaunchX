@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="index.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <header>
+        <center><img class='logo' src="logo.png" width="830" height="149" alt=""></center>
+    </header>
+    <form action="" onsubmit="searchPokemon(event)">
+        <input type="text" class="pokeName" id="pokeName" name="pokeName" placeholder="Nombre o ID del pokemon" autocomplete="off">
+    </form>
+    <!--enter block--->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          document.querySelectorAll('input[type=text]').forEach( node => node.addEventListener('keypress', e => {
+            if(e.keyCode == 13) {
+              e.preventDefault();
+            }
+          }))
+        });
+      </script>
+
+    <div data-poke-card class="poke-card">
+        <div data-poke-name class="data-poke-name">Pokemon</div>
+        <div data-poke-img-container class="img-container">
+            <img class="pokeImg" id="pokeImg" src="25.png"><br>
+        </div>
+    <div pokemon-data class="pokemon-data">
+    <div data-poke-id></div>
+    <div types>
+        <div data-poke-type1 class="data-poke-type1"></div>
+        <div data-poke-type2 class="data-poke-type2"></div>
+    </div><br>
+    <div physique class="physique">
+        <div data-poke-weight class="data-poke-weight"></div>
+        <div data-poke-height class="data-poke-height"></div>
+    </div>
+    <br><br>
+    </div>
+    <div data-poke-stats class="data-poke-stats"></div>
+    <button class='button1'onclick="fetchPokemon()">Buscar</button>
+    </div>
+<br>
+<div psyduck-aviso>
+    <figure>
+    <img class= "aviso" src="psyduck-aviso.png" width="183" height="213">
+    <img class= "dialog" src="dialog.png" width="505" height="213">
+    </figure>
+</div>
+</body>
+<footer>
+    <br>
+    <center><p class="footer-text">2022 - Desarrollado por Ángel Mauricio Galván Rodríguez</p></center>
+</footer>
+</html>
